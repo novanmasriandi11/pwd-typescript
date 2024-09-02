@@ -1,0 +1,3 @@
+[submodule "m01/exercise01"]
+	path = m01/exercise01
+	url = https://github.com/novanmasriandi11/pwd-typescript.git
