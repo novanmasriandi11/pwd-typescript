@@ -52,11 +52,22 @@ if (isPrime) {
 //Define variable and assign the value
 let sum: number = 0;
 let _numberSum: number = 5;
+let _hasil: string = `${_numberSum} -> `;
 
 //Process Calculation
 for (let x: number = 1; x <= _numberSum; x++){
     sum += x;
+    _hasil += x === _numberSum ? `${x} = ${sum}`:`${x} + `
 }
+console.log(_hasil);
+console.log(`Sum of numbers from 1 to ${_numberSum} is: ${sum}`);
 
-console.log(`Sum of numbers from 1 to ${_numberSum} is: ${sum}`)
+/*
+    QUESTION 4
+    Find factorial of a numbe
+ */
 
+//Define variable and assign the value
+let _numberFactorial: number = 0;
+let factorial: number = 0;
+_hasil = `${_numberFactorial} -> `;
