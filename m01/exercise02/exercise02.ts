@@ -68,6 +68,13 @@ console.log(`Sum of numbers from 1 to ${_numberSum} is: ${sum}`);
  */
 
 //Define variable and assign the value
-let _numberFactorial: number = 0;
-let factorial: number = 0;
+let _numberFactorial: number = 6;
+let factorial: number = 1;
 _hasil = `${_numberFactorial} -> `;
+
+//Process Calculation
+for (let x: number = _numberFactorial; x >= 1; x--){
+    factorial *= x;
+    _hasil += x === 1 ? `${x} = ${factorial}` : `${x} x `;
+}
+console.log(_hasil)
