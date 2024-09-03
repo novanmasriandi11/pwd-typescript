@@ -37,8 +37,8 @@ let _area: number = 0;
 _diameter = _radius * 2;
 _circumference = _phi * _diameter;
 _area = _phi * (_radius ** 2);
-
 console.log(`Diameter: ${_diameter}\nCircumference: ${_circumference.toFixed(4)}\nArea: ${_area.toFixed(4)}`)
+
 /*
     QUESTION 4
     Find angles of triangle if two angles are given.
