@@ -4,13 +4,13 @@
  */
 
 //Define variable and assign the value
-let _number: number = 25;
+let _number1: number = 25;
 
 //Process Check
-if (_number % 2 === 0) {
-    console.log(`${_number} is even`)
+if (_number1 % 2 === 0) {
+    console.log(`${_number1} is even`)
 } else {
-    console.log(`${_number} is odd`)
+    console.log(`${_number1} is odd`)
 }
 
 /*
@@ -19,19 +19,19 @@ if (_number % 2 === 0) {
  */
 
 //Define variable and assign the value
-let number: number = 7;
+let _number2: number = 7;
 let isPrime: boolean = false;
 
 //Process Calculation
-if (number <= 1) {
+if (_number2 <= 1) {
     isPrime = false;
-} else if (number <= 3) {
+} else if (_number2 <= 3) {
     isPrime = true
-} else if (number % 2 === 0 || number % 3 === 0) {
+} else if (_number2 % 2 === 0 || _number2 % 3 === 0) {
     isPrime = false;
 } else {
-    for (let i = 5; i * i <= number; i += 6){
-        if (number % i === 0 || number % (i + 2) === 0) {
+    for (let i: number = 5; i * i <= _number2; i += 6){
+        if (_number2 % i === 0 || _number2 % (i + 2) === 0) {
             isPrime = false;
             break;
         }
@@ -39,7 +39,24 @@ if (number <= 1) {
 }
 
 if (isPrime) {
-    console.log(`${number} is a prime number`);
+    console.log(`${_number2} is a prime number`);
 } else {
-    console.log(`${number} is not a prime number`);
+    console.log(`${_number2} is not a prime number`);
 }
+
+/*
+    QUESTION 3
+    Find the sum of the numbers 1 to N
+ */
+
+//Define variable and assign the value
+let sum: number = 0;
+let _numberSum: number = 5;
+
+//Process Calculation
+for (let x: number = 1; x <= _numberSum; x++){
+    sum += x;
+}
+
+console.log(`Sum of numbers from 1 to ${_numberSum} is: ${sum}`)
+
