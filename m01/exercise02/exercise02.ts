@@ -78,3 +78,27 @@ for (let x: number = _numberFactorial; x >= 1; x--){
     _hasil += x === 1 ? `${x} = ${factorial}` : `${x} x `;
 }
 console.log(_hasil)
+
+/*
+    QUESTION 5
+    Print the first N fibonacci numbers
+*/
+
+//Define variable and assign the value
+let fiboNum: number = 15;
+_hasil = `${fiboNum} -> `;
+//Initialize the first two Fibonacci numbers
+let fibNum1: number = 0;
+let fibNum2: number = 1;
+
+_hasil += `${fibNum1}, `;
+
+for (let x: number = 1; x <= fiboNum; x++){
+    let fibNext: number = fibNum1 + fibNum2;
+    _hasil += `${fibNum2}, `;
+    console.log(fibNum2);
+    fibNum1 = fibNum2;
+    fibNum2 = fibNext
+}
+
+console.log(_hasil)
