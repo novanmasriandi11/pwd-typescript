@@ -9,7 +9,7 @@ let _multiplyLength: number = 10;
 
 //Process calculation
 for (let x: number = 1; x <= _multiplyLength; x++) {
-    let _output = `${_numberMultiplicator} x ${x}`
+    let _output:string  = `${_numberMultiplicator} x ${x}`
     console.log(_output)
 }
 
@@ -35,8 +35,21 @@ console.log(result);
 //Define variable and assign the value
 let _distanceInCentiMeter: number = 100000;
 const conversionDivider: number = 100000;
-let _hasil = `${_distanceInCentiMeter} -> `;
+let _hasil:string = `${_distanceInCentiMeter} -> `;
 
 //Process
 _hasil += _distanceInCentiMeter / conversionDivider + 'km';
 console.log(_hasil)
+
+/*
+    QUESTION 4
+    Format number as currency (IDR)
+ */
+
+//Define variable and assign the value
+let _numCurrency: number = 1000;
+_hasil = `${_numCurrency} -> `;
+
+//Process
+_hasil += _numCurrency.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
+console.log(_hasil);
