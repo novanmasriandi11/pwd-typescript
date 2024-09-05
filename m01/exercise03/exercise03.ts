@@ -71,3 +71,17 @@ for (let character of _textSearch) {
 }
 _hasil += _text;
 console.log(_hasil);
+
+/*
+    QUESTION 6
+    Capitalize the first letter of each word in a string 
+ */
+
+//Define variable and assign the value
+let _capitalizeWord: string = "hello world";
+_hasil = `${_capitalizeWord} -> `;
+
+//Process
+_capitalizeWord = _capitalizeWord.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
+// console.log(_capitalizeWord);
+console.log(_hasil += _capitalizeWord);
