@@ -53,3 +53,21 @@ _hasil = `${_numCurrency} -> `;
 //Process
 _hasil += _numCurrency.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
 console.log(_hasil);
+
+/**
+    QUESTION 5
+    Remove the first occurrence of a given “search string” from a string
+ */
+
+//Define variable and assign the value
+let _text: string = "Hello world";
+let _textSearch: string = 'ell';
+_hasil = `string = "${_text}", search string = "${_textSearch}" -> `;
+
+//Process
+for (let character of _textSearch) {
+    _text = _text.replace(character,'')
+    // console.log(_text);
+}
+_hasil += _text;
+console.log(_hasil);
