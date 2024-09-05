@@ -85,3 +85,17 @@ _hasil = `${_capitalizeWord} -> `;
 _capitalizeWord = _capitalizeWord.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
 // console.log(_capitalizeWord);
 console.log(_hasil += _capitalizeWord);
+
+/*
+    QUESTION 7
+    Swap the case of each character from string.
+ */
+
+//Define variables and assign the value
+let _swapLetter: string = "The QuiCk BrOwN Fox";
+_hasil = `${_swapLetter} -> `;
+
+//Process
+_swapLetter = _swapLetter.split('').map(character => character === character.toUpperCase() ? character.toLowerCase() : character.toUpperCase()).join(''); 
+// console.log(_swapLetter);
+console.log(_hasil += _swapLetter);
