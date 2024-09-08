@@ -161,3 +161,36 @@ function evenNumberOnly(arrInput: number[]): string{
 
 console.log(evenNumberOnly([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 
+/**
+ * Question 7
+ * Function to split a string and convert it into an array of words
+ * 
+ * @param inputString
+ * @returns New array of words
+ */
+
+//Solve
+function splitString(inputString: string): string{
+    let output = `"${inputString}" -> `;
+    let words: string[] = [];
+    let currentWord: string = '';
+    
+    for (let i = 0; i < inputString.length; i++){
+        const char = inputString[i];
+        
+        if (char !== ' ') {
+            currentWord += char;
+        }
+        
+        if (char === ' ' || i === inputString.length - 1) {
+            if (currentWord !== '') {
+                words.push(currentWord);
+                currentWord = '';
+            }
+        }
+    }
+
+    return output += `[${words}]`;
+}
+
+console.log(splitString('Hello World'));
