@@ -134,3 +134,23 @@ console.log(calculateBMI(1.67, 63));
 console.log(calculateBMI(1.57, 63));
 console.log(calculateBMI(1.61, 83));
 console.log(calculateBMI(1.75, 125));
+
+/**
+ * Question 6
+ * Function to remove all odd numbers in an array and 
+ * return a new array that contains even numbers only
+ * 
+ * @param arrInput - Numbers in array
+ * @returns New array with only even numbers
+ */
+
+//Solve
+function evenNumberOnly(arrInput: number[]): string{
+    let output: string = `[${arrInput}] -> `;
+    const process: number[] = arrInput.filter(num => num % 2 === 0);
+    // return arrInput.filter(num => num % 2 === 0);
+
+    return output += `[${process}]`;
+}
+
+console.log(evenNumberOnly([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
