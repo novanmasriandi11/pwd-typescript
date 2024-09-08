@@ -6,11 +6,12 @@
  * 1  2  3
  * 1  2  3  4
  * 1  2  3  4  5
+ * 
  * @param height 
  */
 
 //Solve
-function trianglePattern(height: number) {
+function trianglePattern(height: number):string {
     let numberPattern: string = '';
     for (let x = 1; x <= height; x++){
         for (let y = 1; y <= x; y++){
@@ -18,21 +19,24 @@ function trianglePattern(height: number) {
         }
         numberPattern += '\n';
     }
-    console.log(numberPattern);
+    // console.log(numberPattern);
+    return numberPattern;
 }
 
-trianglePattern(5);
+console.log(trianglePattern(5));
 
 /**
  * Question 2
  * Create a function that receiving array as input,
  * and this function can find maximum value in array
  * without using built in method in javascript. 
+ * 
  * @param arrInput
+ * @returns maxValue - Highest Value from the input of array
  */
 
 //Solve
-function findMaxValue(arrInput: number[]) {
+function findMaxValue(arrInput: number[]):number {
     let maxValue: number = 0;
     for (let i = 0; i <= arrInput.length; i++){
         if (maxValue < arrInput[i]) {
@@ -51,11 +55,12 @@ console.log(findMaxValue([10, 55, 79, 32]));
  * 02  03
  * 04  05  06
  * 07  08  09  10
+ * 
  * @param height
  */
 
 //Solve
-function trianglePattern_2(height: number) {
+function trianglePattern_2(height: number):string {
     let showPattern: string = '';
     let currentNumber: number = 1;
     for (let i = 1; i <= height; i++){
@@ -65,10 +70,11 @@ function trianglePattern_2(height: number) {
         }
         showPattern += '\n';
     }
-    console.log(showPattern);
+    // console.log(showPattern);
+    return showPattern;
 }
 
-trianglePattern_2(4);
+console.log(trianglePattern_2(4));
 
 /**
  * Question 4
@@ -76,11 +82,12 @@ trianglePattern_2(4);
  * and will replace multiples of 3 with "Fizz", 
  * multiples of 5 with "Buzz", 
  * multiples of 3 and 5 with "FizzBuzz".
+ * 
  * @param n
  */
 
 //Solve
-function fizzBuzzLooping(n: number) {
+function fizzBuzzLooping(n: number):string {
     let hasil = `n = ${n} -> `;
     for (let i = 1; i <= n; i++){
         let result = (i % 3 === 0 && i % 5 === 0) ? 'FizzBuzz' :
@@ -90,8 +97,40 @@ function fizzBuzzLooping(n: number) {
         hasil += result + ' ';        
         // console.log(result);
     }
-    console.log(hasil);
+    return hasil;
+    // console.log(hasil);
 }
 
-fizzBuzzLooping(6);
-fizzBuzzLooping(15);
+console.log(fizzBuzzLooping(6));
+console.log(fizzBuzzLooping(15));
+
+/**
+ * Question 5
+ * Create a function to calculate Body Mass Index (BMI)
+ * Formula : BMI = weight (kg) / (height (meter))²
+ * 
+ * @param height - Height in meters
+ * @param weight - Weight in kilograms
+ * @returns If BMI < 18.5       = "less weigth"
+ * @returns if BMI 18.5 - 24.9  = "ideal"
+ * @returns if BMI 25.0 - 29.9  = “overweight”
+ * @returns if BMI 30.0 - 39.9  = “very overweight”
+ * @returns if BMI > 39.9       = “obesity”
+ */
+
+//Solve
+function calculateBMI(height: number, weight: number): string {
+    let status = `Height = ${height}m, Weight = ${weight}kg -> `;
+    const bmi: number = weight / (height * height);
+    let result = (bmi < 18.5) ? "less weight" :
+                 (bmi >= 18.5 && bmi <= 24.9) ? "ideal" :
+                 (bmi >= 25.0 && bmi <= 29.9) ? 'overweight' :
+                 (bmi >= 30.0 && bmi <= 39.9) ? 'very overweight' : 'obesity'
+    status += result;
+    return status;
+}
+
+console.log(calculateBMI(1.67, 63));
+console.log(calculateBMI(1.57, 63));
+console.log(calculateBMI(1.61, 83));
+console.log(calculateBMI(1.75, 125));
