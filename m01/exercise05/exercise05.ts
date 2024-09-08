@@ -88,8 +88,8 @@ console.log(getSecondSmallestNumber([5, 3, 1, 7, 2, 6]));
  * Function to calculate each element in the same position from two arrays of integer. 
  * Assume both arrays are of the same length.
  * 
- * @param arrInput1 
- * @param arrInput2
+ * @param arrInput1 - First Array
+ * @param arrInput2 - Second Array
  * @returns A new array of calcuate each element from two arrays
  */
 
@@ -202,3 +202,20 @@ function findDuplicateValue(arrInput: number[]): string {
     return `arr = [${arrInput}] -> [${[...new Set(duplicates)]}]`;
 }
 console.log(findDuplicateValue([1, 2, 2, 2, 3, 3, 4, 5, 5]));
+
+/**
+ * Question 10
+ * Function to find the difference in 2 given array
+ * 
+ * @param arrInput1 - First Array
+ * @param arrInput2 - Second Array
+ * @returns A new array with the difference value
+ */
+
+//Solve
+function findDifferenceTwoArray(arrInput1: number[], arrInput2: number[]): string {
+    const difference = arrInput1.concat(arrInput2).filter(item => !(arrInput1.includes(item) && arrInput2.includes(item)));
+
+    return `arr1 = [${arrInput1}], arr2 = [${arrInput2}] -> [${difference}]`;
+}
+console.log(findDifferenceTwoArray([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]));
