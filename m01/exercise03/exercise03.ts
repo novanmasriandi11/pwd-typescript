@@ -164,3 +164,20 @@ _hasil = `${_inputShow} -> `;
 const checkInput = typeof _inputShow === 'string' ? 1 : typeof _inputShow === 'number' ? 2 : 3;
 _hasil += checkInput;
 console.log(_hasil);
+
+/*
+    QUESTION 11
+    Change every letter a into * from a string of input
+*/
+
+//Define variable and assign the value
+let _stringInput: string = "An apple a day keeps the doctor away";
+_hasil = `${_stringInput} -> `;
+
+//Process
+const process = _stringInput.split('').map(item => item.replace(/a/gi,'*')).join('');
+_hasil += process;
+
+// console.log(process);
+// console.log(_stringInput);
+console.log(_hasil);
