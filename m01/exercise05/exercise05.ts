@@ -28,6 +28,7 @@ function getStatsWithoutSort(arrInput: number[]): string {
 }
 console.log(getStatsWithoutSort([12, 5, 23, 18, 4, 45, 32]));
 
+//Solve - with sort function
 function getStatsWithSort(arrInput: number[]): string{
     let output = `arr = [${arrInput}] -> `;
     const sorted = arrInput.slice().sort((a, b) => a - b);
@@ -39,5 +40,27 @@ function getStatsWithSort(arrInput: number[]): string{
     output += `{lowest: ${lowestValue}, highest: ${highestValue}, average: ${averageValue.toFixed(4)}}`;
     return output;
 }
-
 console.log(getStatsWithSort([12, 5, 23, 18, 4, 45, 32]));
+
+/**
+ * Question 2
+ * Function that takes an array of words and 
+ * returns a string by concatenating the words in the array, 
+ * separated by commas and - the last word - by an 'and'.
+ * 
+ * @param arrInput
+ * @returns a string by concatenating the words in the array, 
+ * separated by commas and - the last word - by an 'and'.
+ */
+
+//Solve
+function concatTheWords(arrInput: string[]): string{
+    let output = `arr = [${arrInput}] -> `;
+    const lastWord = arrInput.pop();
+    const concatWords = arrInput.join(', ');
+
+    output += `${concatWords} and ${lastWord}`;
+
+    return output;
+}
+console.log(concatTheWords(["apple", "banana", "cherry", "date"]));
