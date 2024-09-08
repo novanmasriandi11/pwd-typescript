@@ -64,3 +64,21 @@ function concatTheWords(arrInput: string[]): string{
     return output;
 }
 console.log(concatTheWords(["apple", "banana", "cherry", "date"]));
+
+/**
+ * Question 3
+ * Function from a given array of numbers and return the second smallest number.
+ * 
+ * @param arrInput
+ * @returns The second smallest number.
+ */
+
+//Solve
+function getSecondSmallestNumber(arrInput: number[]): string {
+    let output = `numbers = [${arrInput}] -> `;
+    const secondSmallest = arrInput.sort((a, b) => a - b)[1];    
+
+    output += secondSmallest;
+    return output;
+}
+console.log(getSecondSmallestNumber([5, 3, 1, 7, 2, 6]));
