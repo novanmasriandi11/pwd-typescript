@@ -82,3 +82,23 @@ function getSecondSmallestNumber(arrInput: number[]): string {
     return output;
 }
 console.log(getSecondSmallestNumber([5, 3, 1, 7, 2, 6]));
+
+/**
+ * Question 4
+ * Function to calculate each element in the same position from two arrays of integer. 
+ * Assume both arrays are of the same length.
+ * 
+ * @param arrInput1 arrInput2
+ * @returns A new array of calcuate each element from two arrays
+ */
+
+//Solve
+function calculateTwoArrays(arrInput1: number[], arrInput2: number[]): string{
+    let output = `[${arrInput1}] + [${arrInput2}] -> `;
+
+    const sumTwoArrays = arrInput1.map((num, index) => num + (arrInput2[index] || 0));
+    
+    output += `[${sumTwoArrays}]`;
+    return output;
+}
+console.log(calculateTwoArrays([1, 2, 3], [3, 2, 1]));
