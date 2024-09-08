@@ -150,3 +150,17 @@ if (_sortNum1 > _sortNum2) {
 }
 _hasil += `${_sortNum1}, ${_sortNum2}, ${_sortNum3}`;
 console.log(_hasil);
+
+/*
+    QUESTION 10
+    Shows 1 if the input is a string, 2 if the input is a number, and 3 for others data type.
+*/
+
+//Define variable and assign the value
+let _inputShow: string = "hello";
+_hasil = `${_inputShow} -> `;
+
+//Process
+const checkInput = typeof _inputShow === 'string' ? 1 : typeof _inputShow === 'number' ? 2 : 3;
+_hasil += checkInput;
+console.log(_hasil);
