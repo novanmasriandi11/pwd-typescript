@@ -88,7 +88,8 @@ console.log(getSecondSmallestNumber([5, 3, 1, 7, 2, 6]));
  * Function to calculate each element in the same position from two arrays of integer. 
  * Assume both arrays are of the same length.
  * 
- * @param arrInput1 arrInput2
+ * @param arrInput1 
+ * @param arrInput2
  * @returns A new array of calcuate each element from two arrays
  */
 
@@ -108,7 +109,8 @@ console.log(calculateTwoArrays([1, 2, 3], [3, 2, 1]));
  * Function that adds an element to the end of an array. 
  * However, the element should only be added if it is not already in the array.
  * 
- * @param arrInput newElement
+ * @param arrInput
+ * @params newElement
  * @returns A new of array with new element if it is not already in the array.
  */
 
@@ -130,7 +132,7 @@ console.log(addElementInArray([1, 2, 3, 4], 7));
  */
 
 //Solve
-function sumAllNumber(arrInput: any[]) {
+function sumAllNumber(arrInput: any[]): string{
     const sum = arrInput.filter(item => typeof item === "number").reduce((prevValue, value) => prevValue + value, 0);
 
     const formatInput = arrInput.map(item => {
@@ -143,3 +145,28 @@ function sumAllNumber(arrInput: any[]) {
     return `mixedArray = [${formatInput}] -> ${sum}`;
 }
 console.log(sumAllNumber(["3", 1, "string", null, false, undefined, 2]));
+
+/**
+ * Question 7
+ * Function to insert multiple given integer (not an array) to an array and have a maximum size input. 
+ * The array can only have a maximum size from a given input. 
+ * (if the maximum size of the given input is 5 than the array can only contain 5 elements).
+ * 
+ * @params maxSize - The maximum size of the array.
+ * @params numbers - Multiple numbers to be inserted.
+ * @returns A new array with the integers inserted up to maximum size limit.
+ */
+
+//Solve
+function insertNumberWithLimit(maxSize: number, ...numbers: number[]) {
+    let arrNumber:number[] = [];
+    for (let number of numbers) {
+        if (arrNumber.length < maxSize) {
+            arrNumber.push(number);
+        } else {
+            break;
+        }
+    }
+    return `maxSize = ${maxSize}, given integers is ${numbers} -> [${arrNumber}]`;
+}
+console.log(insertNumberWithLimit(5, 5, 10, 24, 3, 6, 7, 8));
