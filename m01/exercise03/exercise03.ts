@@ -99,3 +99,9 @@ _hasil = `${_swapLetter} -> `;
 _swapLetter = _swapLetter.split('').map(character => character === character.toUpperCase() ? character.toLowerCase() : character.toUpperCase()).join(''); 
 // console.log(_swapLetter);
 console.log(_hasil += _swapLetter);
+
+/*
+    QUESTION 8
+    Find the largest of two given integers
+
+ */
