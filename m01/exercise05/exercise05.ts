@@ -253,3 +253,19 @@ function getPrimitiveDataTypes(arrInput: any[]): string {
     return `arr = [${formatInput}] -> [${formatPrimitives}]`;
 }
 console.log(getPrimitiveDataTypes([1, [], undefined, {}, "string", {}, []]));
+
+/**
+ * Question 12
+ * Function from the below array of number that will return sum of duplicate values.
+ * 
+ * @param arrInput
+ * @returns Sum of the duplicates values of an array;
+ */
+
+//Solve
+function sumDuplicateValues(arrInput: number[]):string {
+    const sumDuplicate = arrInput.filter((number, index, array) => array.indexOf(number) !== index || array.lastIndexOf(number) !== index   ).reduce((prevValue, value) => prevValue + value, 0);  
+
+    return `arr = [${arrInput}] -> ${sumDuplicate}`;
+}
+console.log(sumDuplicateValues([10, 20, 40, 10, 50, 30, 10, 60, 10]));
