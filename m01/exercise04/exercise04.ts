@@ -69,3 +69,29 @@ function trianglePattern_2(height: number) {
 }
 
 trianglePattern_2(4);
+
+/**
+ * Question 4
+ * Create a function that can loop the number of times according to the input we provide, 
+ * and will replace multiples of 3 with "Fizz", 
+ * multiples of 5 with "Buzz", 
+ * multiples of 3 and 5 with "FizzBuzz".
+ * @param n
+ */
+
+//Solve
+function fizzBuzzLooping(n: number) {
+    let hasil = `n = ${n} -> `;
+    for (let i = 1; i <= n; i++){
+        let result = (i % 3 === 0 && i % 5 === 0) ? 'FizzBuzz' :
+                     (i % 3 === 0) ? 'Fizz' :
+                     (i % 5 === 0) ? 'Buzz' : i;
+        
+        hasil += result + ' ';        
+        // console.log(result);
+    }
+    console.log(hasil);
+}
+
+fizzBuzzLooping(6);
+fizzBuzzLooping(15);
