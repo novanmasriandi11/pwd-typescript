@@ -16,7 +16,7 @@ for (let x: number = 1; x <= _multiplyLength; x++) {
 /*
     QUESTION 2
     Check whether a string is a palindrome or not.
- */
+*/
 
 //Define variable and assign the value 
 let _word: string = 'madam';
@@ -30,7 +30,7 @@ console.log(result);
 /*
     QUESTION 3
     Convert centimeter to kilometer
- */
+*/
 
 //Define variable and assign the value
 let _distanceInCentiMeter: number = 100000;
@@ -44,7 +44,7 @@ console.log(_hasil)
 /*
     QUESTION 4
     Format number as currency (IDR)
- */
+*/
 
 //Define variable and assign the value
 let _numCurrency: number = 1000;
@@ -54,10 +54,10 @@ _hasil = `${_numCurrency} -> `;
 _hasil += _numCurrency.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
 console.log(_hasil);
 
-/**
+/*
     QUESTION 5
     Remove the first occurrence of a given “search string” from a string
- */
+*/
 
 //Define variable and assign the value
 let _text: string = "Hello world";
@@ -75,7 +75,7 @@ console.log(_hasil);
 /*
     QUESTION 6
     Capitalize the first letter of each word in a string 
- */
+*/
 
 //Define variable and assign the value
 let _capitalizeWord: string = "hello world";
@@ -89,7 +89,7 @@ console.log(_hasil += _capitalizeWord);
 /*
     QUESTION 7
     Swap the case of each character from string.
- */
+*/
 
 //Define variables and assign the value
 let _swapLetter: string = "The QuiCk BrOwN Fox";
@@ -103,5 +103,50 @@ console.log(_hasil += _swapLetter);
 /*
     QUESTION 8
     Find the largest of two given integers
+*/
 
- */
+//Define variable and assign the value
+let _numFind1: number = 42;
+let _numFind2: number = 27;
+_hasil = `num1 = ${_numFind1}, num2 = ${_numFind2} -> `;
+
+//Process
+let _findNum = _numFind1 > _numFind2 ? _numFind1 : _numFind2;
+_hasil += _findNum;
+console.log(_hasil);
+
+/*
+    QUESTION 9
+    Conditional statement to sort three numbers
+*/
+
+//Define variable and assign the value
+let _sortNum1: number = 42;
+let _sortNum2: number = 27;
+let _sortNum3: number = 18;
+_hasil = `num1 = ${_sortNum1}, num2 = ${_sortNum2}, num3 = ${_sortNum3} -> `;
+
+//Process
+if (_sortNum1 > _sortNum2) {
+    [_sortNum1, _sortNum2] = [_sortNum2, _sortNum1];
+
+    // console.log(_sortNum1);
+    // console.log(_sortNum2);
+    // console.log(_sortNum3);
+}
+if (_sortNum2 > _sortNum3) {
+    [_sortNum2, _sortNum3] = [_sortNum3, _sortNum2];
+
+    // console.log(_sortNum1);
+    // console.log(_sortNum2);
+    // console.log(_sortNum3);
+}
+if (_sortNum1 > _sortNum2) {
+    [_sortNum1, _sortNum2] = [_sortNum2, _sortNum1];
+
+    // console.log(_sortNum1);
+    // console.log(_sortNum2);
+    // console.log(_sortNum3);
+}
+_hasil += `${_sortNum1}, ${_sortNum2}, ${_sortNum3}`;
+console.log(_hasil);
