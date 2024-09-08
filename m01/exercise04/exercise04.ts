@@ -22,3 +22,23 @@ function trianglePattern(height: number) {
 
 trianglePattern(5);
 
+/*
+    Question 2
+    Create a function that receiving array as input, 
+    and this function can find maximum value in array without using built in method in javascript.
+    Parameters : array
+    Output: number
+*/
+
+//Solve
+function findMaxValue(arrInput: number[]) {
+    let maxValue: number = 0;
+    for (let i = 0; i <= arrInput.length; i++){
+        if (maxValue < arrInput[i]) {
+            maxValue = arrInput[i]
+        }
+    }
+    return maxValue;
+}
+
+console.log(findMaxValue([10, 55, 79, 32]));
