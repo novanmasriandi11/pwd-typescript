@@ -269,3 +269,37 @@ function sumDuplicateValues(arrInput: number[]):string {
     return `arr = [${arrInput}] -> ${sumDuplicate}`;
 }
 console.log(sumDuplicateValues([10, 20, 40, 10, 50, 30, 10, 60, 10]));
+
+/**
+ * Question 13
+ * Function for game rock, paper, scissor that will return Win or Lose
+ * The function will randomly pick between rock, paper, scissor.
+ * 
+ * @param playerChoice
+ * @returns The result of the game: Win or Lose
+ */
+
+//Solve
+function rockPaperScissorsGame(playerChoice: "rock" | "paper" | "scissors"):string {
+    const choices = ["rock", "paper", "scissors"];
+
+    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+    console.log(`Computer choose: ${computerChoice}`);
+
+    switch (playerChoice) {
+        case computerChoice:
+            return "Draw!";
+        case 'rock':
+            return computerChoice === 'scissors' ? 'Win!' : 'Lose!';
+        case 'paper':
+            return computerChoice === 'rock' ? 'Win!' : 'Lose!';
+        case 'scissors':
+            return computerChoice === 'paper' ? 'Win!' : 'Lose!';
+        default:
+            return "Invalid choice!";
+    }
+}
+
+console.log(rockPaperScissorsGame('paper'));
+console.log(rockPaperScissorsGame('rock'));
+console.log(rockPaperScissorsGame('scissors'));
