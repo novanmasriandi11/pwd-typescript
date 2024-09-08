@@ -120,3 +120,26 @@ function addElementInArray(arrInput: number[], newElement: number): string{
 }
 console.log(addElementInArray([1, 2, 3, 4], 4));
 console.log(addElementInArray([1, 2, 3, 4], 7));
+
+/**
+ * Question 6
+ * Function from a given array of mixed data types and return the sum of all the number.
+ * 
+ * @param arrInput
+ * @returns Sum of all the number in the array
+ */
+
+//Solve
+function sumAllNumber(arrInput: any[]) {
+    const sum = arrInput.filter(item => typeof item === "number").reduce((prevValue, value) => prevValue + value, 0);
+
+    const formatInput = arrInput.map(item => {
+        if (item === "3") return '"3"';
+        if (item === null) return 'null';
+        if (item === undefined) return 'undefined';
+        return item;
+    }).join(', ');
+
+    return `mixedArray = [${formatInput}] -> ${sum}`;
+}
+console.log(sumAllNumber(["3", 1, "string", null, false, undefined, 2]));
