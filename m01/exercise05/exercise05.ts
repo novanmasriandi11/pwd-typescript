@@ -158,7 +158,7 @@ console.log(sumAllNumber(["3", 1, "string", null, false, undefined, 2]));
  */
 
 //Solve
-function insertNumberWithLimit(maxSize: number, ...numbers: number[]) {
+function insertNumberWithLimit(maxSize: number, ...numbers: number[]): string{
     let arrNumber:number[] = [];
     for (let number of numbers) {
         if (arrNumber.length < maxSize) {
@@ -170,3 +170,20 @@ function insertNumberWithLimit(maxSize: number, ...numbers: number[]) {
     return `maxSize = ${maxSize}, given integers is ${numbers} -> [${arrNumber}]`;
 }
 console.log(insertNumberWithLimit(5, 5, 10, 24, 3, 6, 7, 8));
+
+/**
+ * Question 8
+ * Function that will combine 2 given array into one array
+ * 
+ * @param arrInput1 - First Given Array
+ * @param arrInput2 - Second Given Array
+ * @returns A new single array of combine the 2 given array
+ */
+
+//Solve
+function combineTwoArray(arrInput1: number[], arrInput2: number[]): string{
+    let arrCombine:number[] = []
+    arrCombine.push(...arrInput1, ...arrInput2);
+    return `arr1 = [${arrInput1}], arr2 = [${arrInput2}] -> [${arrCombine}]`;
+}
+console.log(combineTwoArray([1, 2, 3],[4, 5, 6]));
