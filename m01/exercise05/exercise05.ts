@@ -186,4 +186,19 @@ function combineTwoArray(arrInput1: number[], arrInput2: number[]): string{
     arrCombine.push(...arrInput1, ...arrInput2);
     return `arr1 = [${arrInput1}], arr2 = [${arrInput2}] -> [${arrCombine}]`;
 }
-console.log(combineTwoArray([1, 2, 3],[4, 5, 6]));
+console.log(combineTwoArray([1, 2, 3], [4, 5, 6]));
+
+/**
+ * Question 9
+ * Function to find duplicate values in an array
+ * 
+ * @param arrInput
+ * @returns A new array with the duplicate value
+ */
+
+//Solve
+function findDuplicateValue(arrInput: number[]): string {
+    const duplicates = arrInput.filter((number, index) => arrInput.indexOf(number) !== index)
+    return `arr = [${arrInput}] -> [${[...new Set(duplicates)]}]`;
+}
+console.log(findDuplicateValue([1, 2, 2, 2, 3, 3, 4, 5, 5]));
