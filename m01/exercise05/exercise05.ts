@@ -219,3 +219,37 @@ function findDifferenceTwoArray(arrInput1: number[], arrInput2: number[]): strin
     return `arr1 = [${arrInput1}], arr2 = [${arrInput2}] -> [${difference}]`;
 }
 console.log(findDifferenceTwoArray([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]));
+
+/**
+ * Question 11
+ * Function that will return primitive data types only.
+ * 
+ * @param arrInput - An array containing various types of values.
+ * @returns A new array containing only primitive data types.
+ */
+
+//Solve
+function getPrimitiveDataTypes(arrInput: any[]): string {
+
+    const primitives = arrInput.filter(item => 
+        typeof item === 'number' || typeof item === 'string' ||
+        typeof item === 'boolean' || typeof item === 'undefined'
+    );
+
+    const formatInput = arrInput.map((item) => {
+        if (item === undefined) return "undefined";
+        if (Array.isArray(item)) return '[]';
+        if (typeof item === 'object') return '{}';
+        if (typeof item === 'string') return `"${item}"`;
+        return item;
+    }).join(", ")
+
+    const formatPrimitives = primitives.map((item) => {
+        if (item === undefined) return 'undefined';
+        if (typeof item === 'string') return `"${item}"`;
+        return item;
+    }).join(", ");
+
+    return `arr = [${formatInput}] -> [${formatPrimitives}]`;
+}
+console.log(getPrimitiveDataTypes([1, [], undefined, {}, "string", {}, []]));
