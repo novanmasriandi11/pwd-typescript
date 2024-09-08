@@ -147,10 +147,17 @@ console.log(calculateBMI(1.75, 125));
 //Solve
 function evenNumberOnly(arrInput: number[]): string{
     let output: string = `[${arrInput}] -> `;
-    const process: number[] = arrInput.filter(num => num % 2 === 0);
+    // const process: number[] = arrInput.filter(num => num % 2 === 0);
     // return arrInput.filter(num => num % 2 === 0);
+    let process: number[] = [];
+    for (let i = 0; i < arrInput.length; i++){
+        if (arrInput[i] % 2 === 0) {
+            process.push(arrInput[i]);
+        }
+    }
 
     return output += `[${process}]`;
 }
 
 console.log(evenNumberOnly([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
