@@ -102,3 +102,21 @@ function calculateTwoArrays(arrInput1: number[], arrInput2: number[]): string{
     return output;
 }
 console.log(calculateTwoArrays([1, 2, 3], [3, 2, 1]));
+
+/**
+ * Question 5
+ * Function that adds an element to the end of an array. 
+ * However, the element should only be added if it is not already in the array.
+ * 
+ * @param arrInput newElement
+ * @returns A new of array with new element if it is not already in the array.
+ */
+
+//Solve
+function addElementInArray(arrInput: number[], newElement: number): string{
+    !arrInput.includes(newElement) ? arrInput.push(newElement) : null;
+    
+    return `arr = [${arrInput}], newElement = ${newElement} -> [${arrInput}]`;
+}
+console.log(addElementInArray([1, 2, 3, 4], 4));
+console.log(addElementInArray([1, 2, 3, 4], 7));
