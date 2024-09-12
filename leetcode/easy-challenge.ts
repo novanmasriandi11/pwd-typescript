@@ -28,15 +28,15 @@ type Fn = (accum: number, curr: number) => number
 
 function reduce(nums: number[], fn: Fn, init: number): number {
     let result = init;
-    for (let x = 0; x < nums.length; x++){
+    for (let x = 0; x < nums.length; x++) {
         result = fn(result, nums[x]);
     }
 
     return result;
 };
 
-console.log(reduce([1,2,3,4], function sum(accum, curr) { return accum + curr * curr ; }, 100));
-console.log(reduce([1,2,3,4], function sum(accum, curr) { return accum + curr ; }, 0));
+console.log(reduce([1, 2, 3, 4], function sum(accum, curr) { return accum + curr * curr; }, 100));
+console.log(reduce([1, 2, 3, 4], function sum(accum, curr) { return accum + curr; }, 0));
 console.log(reduce([], function sum(accum, curr) { return 0; }, 25));
 
 /**
@@ -52,8 +52,8 @@ console.log(reduce([], function sum(accum, curr) { return 0; }, 25));
 type F = (x: number) => number;
 
 function compose(functions: F[]): F {
-    
-    return function(x) {
+
+    return function (x) {
         return functions.reduceRight((acc, F) => F(acc), x);
     }
 };
@@ -86,7 +86,7 @@ type Fn2 = (n: number, i: number) => any
 
 function filter(arr: number[], fn: Fn2): number[] {
     const result: number[] = [];
-    for (let x = 0; x < arr.length; x++){
+    for (let x = 0; x < arr.length; x++) {
         if (fn(arr[x], x)) {
             result.push(arr[x]);
         }
@@ -109,8 +109,8 @@ console.log(filter([-2, -1, 0, 1, 2], function plusOne(n) { return n + 1 }));
 //Solve
 function map(arr: number[], fn: (n: number, i: number) => number): number[] {
     let result: number[] = [];
-    for (let x = 0; x < arr.length; x++){
-            result.push(fn(arr[x], x))
+    for (let x = 0; x < arr.length; x++) {
+        result.push(fn(arr[x], x))
     }
 
     return result;
@@ -134,10 +134,10 @@ console.log(map([10, 20, 30], function constant() { return 42; }));
 //Solve
 function findColumnWidth(grid: number[][]): number[] {
     let result: number[] = [];
-    for (let col = 0; col < grid[0].length; col++){
+    for (let col = 0; col < grid[0].length; col++) {
         let maxLength = 0;
-        
-        for (let row = 0; row < grid.length; row++){
+
+        for (let row = 0; row < grid.length; row++) {
             let numLength = grid[row][col].toString().length;
             maxLength = Math.max(maxLength, numLength);
         }
@@ -148,4 +148,55 @@ function findColumnWidth(grid: number[][]): number[] {
 };
 
 console.log(findColumnWidth([[1], [22], [333]]));
-// console.log(findColumnWidth([[-15,1,3],[15,7,12],[5,6,-2]]));
+console.log(findColumnWidth([[-15, 1, 3], [15, 7, 12], [5, 6, -2]]));
+
+/**
+ * Counter II
+ * 
+ * Write a function createCounter. 
+ * It should accept an initial integer init. It should return an object with three functions.
+ * The three functions are:
+    increment() increases the current value by 1 and then returns it.
+    decrement() reduces the current value by 1 and then returns it.
+    reset() sets the current value to init and then returns it.
+ */
+
+type Counter = {
+    increment: () => number,
+    decrement: () => number,
+    reset: () => number,
+}
+
+function createCounter2(init: number): Counter {
+    let currentValue = init;
+    const initialValue = init;
+
+    function increment() {
+        return ++currentValue;
+    }
+    function decrement() {
+        return --currentValue;
+    }
+    function reset() {
+        currentValue = initialValue;
+        return currentValue;
+    }
+
+    return {
+        increment,
+        decrement,
+        reset
+    };
+};
+
+const counter_ = createCounter2(5);
+console.log(counter_.increment());
+console.log(counter_.reset());
+console.log(counter_.decrement());
+
+const counter2 = createCounter2(0);
+console.log(counter2.increment())
+console.log(counter2.increment())
+console.log(counter2.decrement())
+console.log(counter2.reset())
+console.log(counter2.reset())
