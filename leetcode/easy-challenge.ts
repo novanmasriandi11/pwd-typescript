@@ -233,6 +233,23 @@ function countConsistentStrings(allowed: string, words: string[]): number {
     return result;
 };
 
- console.log(countConsistentStrings("ab", ["ad", "bd", "aaab", "baa", "badab"]));
- console.log(countConsistentStrings("abc", ["a","b","c","ab","ac","bc","abc"]));
- console.log(countConsistentStrings("cad", ["cc","acd","b","ba","bac","bad","ac","d"]));
+console.log(countConsistentStrings("ab", ["ad", "bd", "aaab", "baa", "badab"]));
+console.log(countConsistentStrings("abc", ["a","b","c","ab","ac","bc","abc"]));
+console.log(countConsistentStrings("cad", ["cc", "acd", "b", "ba", "bac", "bad", "ac", "d"]));
+ 
+/**
+ * 9. Create Hello World Function
+ * 
+ * Write a function createHelloWorld. It should return a new function that always returns "Hello World". 
+ */
+
+function createHelloWorld() {
+    
+    return function(...args): string {
+        return "Hello World";        
+    };
+};
+
+const f = createHelloWorld();
+console.log(f());
+console.log(f({},null,42));
