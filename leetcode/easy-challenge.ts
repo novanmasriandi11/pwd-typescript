@@ -1,5 +1,5 @@
 /**
- * Counter
+ * 1. Counter
  * Given an integer n, return a counter function. 
  * This counter function initially returns n 
  * and then returns 1 more than the previous value every subsequent time it is called (n, n + 1, n + 2, etc).
@@ -17,7 +17,7 @@ console.log(counter());
 console.log(counter());
 
 /**
- * Array Reduce Transformation
+ * 2. Array Reduce Transformation
  * Given an integer array nums, a reducer function fn, and an initial value init, 
  * return the final result obtained by executing the fn function on each element of the array, 
  * sequentially, passing in the return value from the calculation on the preceding element.
@@ -40,7 +40,7 @@ console.log(reduce([1, 2, 3, 4], function sum(accum, curr) { return accum + curr
 console.log(reduce([], function sum(accum, curr) { return 0; }, 25));
 
 /**
- * Function Composition
+ * 3. Function Composition
  * Given an array of functions [f1, f2, f3, ..., fn], 
  * return a new function fn that is the function composition of the array of functions.
  * The function composition of [f(x), g(x), h(x)] is fn(x) = f(g(h(x))).
@@ -71,7 +71,7 @@ fn = compose([]);
 console.log(fn(42));
 
 /**
- * Filter Elements from Array
+ * 4. Filter Elements from Array
  * 
  * Given an integer array arr and a filtering function fn, return a filtered array filteredArr.
  * The fn function takes one or two arguments:
@@ -98,7 +98,7 @@ console.log(filter([1, 2, 3], function firstIndex(n, i) { return i === 0; }));
 console.log(filter([-2, -1, 0, 1, 2], function plusOne(n) { return n + 1 }));
 
 /**
- * Apply Transform Over Each Element in Array
+ * 5. Apply Transform Over Each Element in Array
  * 
  * Given an integer array arr and a mapping function fn, 
  * return a new array with a transformation applied to each element.
@@ -120,7 +120,7 @@ console.log(map([1, 2, 3], function plusI(n, i) { return n + i; }));
 console.log(map([10, 20, 30], function constant() { return 42; }));
 
 /**
- * Find the Width of Columns of a Grid
+ * 6. Find the Width of Columns of a Grid
  * 
  * You are given a 0-indexed m x n integer matrix grid. 
  * The width of a column is the maximum length of its integers.
@@ -151,7 +151,7 @@ console.log(findColumnWidth([[1], [22], [333]]));
 console.log(findColumnWidth([[-15, 1, 3], [15, 7, 12], [5, 6, -2]]));
 
 /**
- * Counter II
+ * 7. Counter II
  * 
  * Write a function createCounter. 
  * It should accept an initial integer init. It should return an object with three functions.
@@ -200,3 +200,39 @@ console.log(counter2.increment())
 console.log(counter2.decrement())
 console.log(counter2.reset())
 console.log(counter2.reset())
+
+/**
+ * 8. Count the Number of Consistent Strings
+ * 
+ * You are given a string allowed consisting of distinct characters and an array of strings words. 
+ * A string is consistent if all characters in the string appear in the string allowed.
+ * Return the number of consistent strings in the array words.
+ */
+
+function countConsistentStrings(allowed: string, words: string[]): number {
+    let result = 0;
+    const allowedSet = new Set(allowed);
+    // console.log(allowedSet);
+    for (let word of words) {
+        // console.log(word);
+        let isConsistent = true;
+
+        for (let char of word) {
+            // console.log(char);
+            if (!allowedSet.has(char)) {
+                isConsistent = false;
+                break;
+            }
+        }
+        
+        if (isConsistent) {
+            result++;
+        }
+    }
+
+    return result;
+};
+
+ console.log(countConsistentStrings("ab", ["ad", "bd", "aaab", "baa", "badab"]));
+ console.log(countConsistentStrings("abc", ["a","b","c","ab","ac","bc","abc"]));
+ console.log(countConsistentStrings("cad", ["cc","acd","b","ba","bac","bad","ac","d"]));
