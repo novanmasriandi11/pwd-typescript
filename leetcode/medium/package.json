@@ -1,0 +1,22 @@
+{
+  "name": "medium",
+  "version": "1.0.0",
+  "description": "Typescript LeetCode Medium Level",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/novanmasriandi11/pwd-typescript.git"
+  },
+  "author": "manday",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/novanmasriandi11/pwd-typescript/issues"
+  },
+  "homepage": "https://github.com/novanmasriandi11/pwd-typescript#readme",
+  "devDependencies": {
+    "typescript": "^5.6.2"
+  }
+}
