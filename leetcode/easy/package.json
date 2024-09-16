@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/novanmasriandi11/pwd-typescript#readme",
   "devDependencies": {
+    "ts-node": "^10.9.2",
     "typescript": "^5.6.2"
   }
 }
