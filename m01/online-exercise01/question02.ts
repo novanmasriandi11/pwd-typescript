@@ -1,8 +1,8 @@
 function cubeRoot(n: number): number{
-    const tolerance = 0.00000001;
+    const tolerance = 0.000001;
     let calc = n / 3;
     while (Math.abs(calc ** 3 - n) > tolerance) {
-        calc = (2 * calc + n / (calc ** 2)) / 3;
+        calc = Math.round((2 * calc + n / (calc ** 2)) / 3);
     }
     return calc;
 }
